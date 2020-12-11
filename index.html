@@ -9,8 +9,10 @@
   <meta name="theme-color" content="#fafafa">
   <link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.5/angular-material.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet/less" type="text/css" href="styles/main.less" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles/main.css">
+  <!-- <link rel="stylesheet" href="styles/main.css"> -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body ng-controller="storeController">
@@ -18,20 +20,27 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
   <div class="company_title">
-    <img src="assets/sowingo_logo.png"  height= "26.150537490844727px"
+    <img class="sowingo_image" src="assets/sowingo_logo.png"  height= "26.150537490844727px"
     width = "152px">
   </div>
-  <div class="search_area">
-    <div class="empty_section disp_inlline"></div>
-    <div class="search disp_inlline"><input class="search_bar" type="text" name="search" ng-model="filter.search" placeholder="Search by product name, manufacturer, SKU, key..."></div>
-    <div ng-class="{selected: filter.favorite}" class="favorite_filter disp_inlline padding_10" ng-click="onFilterApply('favorite')"><md-icon ng-class="{selected: filter.favorite}" aria-label="Favorite" class="material-icons icon_color ">favorite_border</md-icon> Favorites</div> 
-    <div ng-class="{selected: filter.cartItems}" class="cart disp_inlline padding_10"  ng-click="onFilterApply('cart')"><md-icon ng-class="{selected: filter.cartItems}" aria-label="Favorite" class="material-icons icon_color ">shopping_cart</md-icon><span class='badge badge-warning' id='lblCartCount'> {{cartItems.length}} </span> Cart</div>
-
+  <div class="search_area row">
+    <div class="empty_section col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+    <div class="search col-lg-6 col-md-7 col-sm-12 col-xs-12"><span><md-icon ng-class="{selected: filter.favorite}" aria-label="Favorite" class="material-icons icon_color ">search</md-icon></span>
+      <span>
+        <input   ng-change="onFilterApply('search')" class="search_bar" type="text" name="search" ng-model="filter.search" placeholder="Search by product name, manufacturer, SKU, key...">
+      </span></div>
+    <div ng-class="{selected: filter.favorite}" 
+    class="favorite_filter col-lg-2 col-md-1 col-sm-6 col-xs-5 cursor_pointer text_center" ng-click="onFilterApply('favorite')"><md-icon ng-class="{selected: filter.favorite}" aria-label="Favorite" class="material-icons icon_color ">favorite</md-icon> <span class="fav_text">Favorites</span></div> 
+    <div ng-class="{selected: filter.cartItems}" 
+    class="cart cursor_pointer col-lg-1 col-md-1 col-sm-5 col-xs-5"  
+    ng-click="onFilterApply('cart')"><md-icon ng-class="{selected: filter.cartItems}" 
+    aria-label="Favorite" class="material-icons icon_color ">shopping_cart</md-icon><span class='badge badge-warning' ng-show="cartItems.length" id='lblCartCount'> {{cartItems.length}} </span> <span class="fav_text">Cart</span></div>
+     
   </div>
   
   <div class="back_color padding_30">
     <div class="heading_font">Promos</div>
-    <div class="row margin_left">
+    <div class="row item_container">
      
       <div class=" each-item" ng-repeat="product in productsData">
         <div class="image_container" >
@@ -44,13 +53,13 @@
           <span class="your_price">Your Price </span> <span class="price_value">${{product.vendor_inventory[0].list_price}}</span>
         </div>
         <div class="txt_right actions">
-          <div class="favorite_border" ng-click="markAsFavorite(product)">
+          <div class="favorite_border cursor_pointer" ng-click="markAsFavorite(product)">
             <md-icon aria-label="Favorite" class="material-icons icon_color icon-spacing" ng-show="product.is_favourite_product">favorite</md-icon>
             <md-icon aria-label="Favorite" class="material-icons icon_color icon-spacing" ng-show="!product.is_favourite_product">favorite_border</md-icon>
           </div>
           
-          <button ng-show="!product.isInCart" type="button" ng-click="addItems(product)" class="btn custom_btn btn-primary">Add to cart</button>
-          <button ng-show="product.isInCart" type="button" ng-click="removeItem(product)" class="btn custom_btn btn-primary">Remove from cart</button>
+          <button ng-show="!product.isInCart" type="button" ng-click="addItems(product)" class="btn custom_btn btn-primary cursor_pointer">Add to cart</button>
+          <button ng-show="product.isInCart" type="button" ng-click="removeItem(product)" class="btn custom_btn btn-danger cursor_pointer">Remove from cart</button>
         </div>
       </div>
     </div>
@@ -60,7 +69,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
   <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.5/angular-material.js"></script>
   <script src="js/main.js"></script>
+ 
+  
+  <script src="//cdn.jsdelivr.net/npm/less" ></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> >
   <script src="js/storeController.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

@@ -29,6 +29,15 @@ angular.module('test')
             if($scope.filter.cartItems) {
                 $scope.productsData = $scope.productsData.filter(p => p.isInCart);
             }
+            if($scope.filter.search) {
+                this.productsData = this.productsData.filter((item) => {
+                    return (item.name.toLowerCase().includes($scope.filter.search.toLowerCase()) 
+                    ||  item.manufacturer_sku && item.manufacturer_sku.toLowerCase().includes($scope.filter.search.toLowerCase()) 
+                    ||  item.manufacturer &&  item.manufacturer.name.toLowerCase().includes($scope.filter.search.toLowerCase())
+                    ||  item.office_inventory_item_id && item.office_inventory_item_id.toLowerCase().includes($scope.filter.search)
+                    );
+                  });
+            }
 
         }
         $scope.addItems = function(item) {
@@ -52,12 +61,11 @@ angular.module('test')
             const a = this.allProductData.find(i => i.id === item.id);
             if(value === 'add'){
                 a.isInCart = true;
-            } else if(type === 'remove') {
+            } else if(value === 'remove') {
                 a.isInCart = false;
-            } else if( type === 'favorite') {
+            } else if( value === 'favorite') {
                 a.is_favourite_product = !a.is_favourite_product;
             }
-            console.log(this.allProductData);
         }
         $scope.removeItem = function(item) {
             const r = this.cartItems.find(c => c.id === item.id);
@@ -71,5 +79,6 @@ angular.module('test')
             item.is_favourite_product = !item.is_favourite_product;
             this.updatellItem(item, 'favorite');
         }
+       
        
     });
