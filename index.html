@@ -42,7 +42,7 @@
       <div ng-class="{selected: filter.cartItems}" 
         class="cart cursor_pointer"  
         ng-click="updateFilter('cart')"><md-icon ng-class="{selected: filter.cartItems}" 
-        aria-label="Favorite" class="material-icons icon_color ">shopping_cart</md-icon><span class='badge badge-warning' ng-show="cartItems.length" id='lblCartCount'> {{cartItems.length}} </span> <span class="fav_text">Cart</span>
+        aria-label="Favorite" class="material-icons icon_color ">shopping_cart</md-icon><span class='badge badge-warning' id='lblCartCount'> {{cartItems.length}} </span> <span class="fav_text">Cart</span>
       </div>
        
     </div>
@@ -54,12 +54,13 @@
        
         <div class=" each-item" ng-repeat="product in productsData">
           <div class="image_container" >
-            <img class="item-image" src="assets/item.png" height="200px" width="180px">
+            <img ng-show="product.main_image" class="item-image" ng-src="{{product.main_image}}" height="200px" width="180px">
+            <img ng-show="!product.main_image" class="item-image" src="assets/no-image.png" height="200px" width="180px">
           </div>
           <div class="prod-name">
             {{product.name | limitTo: 52}} {{ product.name.length > 52 ? '...' : ''}}
           </div>
-          <div class="txt_right margin_right_10">
+          <div class="txt_right margin-bottom_8">
             <span class="your_price">Your Price </span> <span class="price_value">${{product.vendor_inventory[0].list_price}}</span>
           </div>
           <div class="txt_right actions">

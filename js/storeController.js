@@ -103,6 +103,29 @@ angular.module('test')
         }
         $scope.markAsFavorite = function(item) {
             item.is_favourite_product = !item.is_favourite_product;
+            if(item.is_favourite_product) {
+                var req = {
+                    method: 'POST',
+                    url: 'https://demo5514996.mockable.io/favorites',
+                    headers: {
+                      'Content-Type': undefined
+                    },
+                    data: { id: item.id, favorite: item.is_favourite_product }
+                   }
+            } else {
+                var req = {
+                    method: 'DELETE',
+                    url: 'https://demo5514996.mockable.io/favorites',
+                    headers: {
+                      'Content-Type': undefined
+                    },
+                    data: { id: item.id, favorite: item.is_favourite_product }
+                   }
+            }
+            
+               
+            $http(req).then(function(){});
+            
             $scope.updatellItem(item, 'favorite');
         }
         window.addEventListener('scroll',(e)=>{
