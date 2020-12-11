@@ -16,7 +16,7 @@
         border: 1px solid @sowingo-grey;
         box-sizing: border-box;
         border-radius: 12px;
-        margin: 10px;
+        margin: 10px 10px 10px 0px;
 }
 .padding_30 {
     padding: 30px;
@@ -98,6 +98,8 @@
     margin-left: 5px;
 }
 .back_color{
+    padding-right: 10%;
+    padding-left: 10%;
     min-height: 500px;
     position: relative;
     top: 135px;
@@ -105,12 +107,11 @@
 }
 .heading_font{
     position: relative;
-    height: 30px;
+    height: 60px;
     width: 85px;
-    left: 122px;
-    top: -5px;
-    font-size:24px;
-    color:  @sowingo-dark-gray;
+    top: 23px;
+    font-size: 24px;
+    color: #4E6374;
     font-weight: 700;
     margin-bottom: 14px;
 
@@ -128,7 +129,8 @@
     z-index: 10;
     background-color: @sowingo-white;
     height: 80px;
-    padding: 23px 23px 23px 142px;
+    padding-left: 10%;
+    padding-right: 10%;
     border-radius: 0px;
     border-bottom: 1px solid @sowingo-grey;
 }
@@ -160,14 +162,15 @@
 }
 .search_area{
     margin:0 !important;
-    top: 80px;
-    position: relative;
+    
     background-color: @sowingo-white;
     position: fixed;
-    /* top: 109px; */
+     top: 80px; 
     z-index: 10;
     width: 100%;
     border-bottom: 1px solid @sowingo-grey;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 .empty_section{
     margin-right: 13px;
@@ -175,15 +178,14 @@
     border-right: 1px solid @sowingo-grey;
 }
 .item_container {
-    margin: 0;
-    padding-left: 117px;
+    margin: 0 !important;
+   
 }
 .search{
-    
-    margin-left: 10px;
+   width: 70%;
     height: 56px;
     padding: 10px;
-   
+    border-left: 1px solid @sowingo-grey;
     border-right: 1px solid @sowingo-grey;
     
 
@@ -198,7 +200,7 @@
 }
 .favorite_filter{
     
-    margin-right: 38px;
+    width:15%;
     /* margin-left: 10px; */
     padding-top:16px !important;
     height: 56px;
@@ -236,6 +238,8 @@
   background-color: #c67605;
 }
 .cart{
+    width:12.5%;
+    text-align: center;
     height: 56px;
     border-right: 1px solid @sowingo-grey;
     cursor: pointer;
@@ -257,6 +261,9 @@
     .fav_text {
         display: none;
     }
+    .company_title{
+
+    }
     .search {
         
         height: 56px;
@@ -273,4 +280,7 @@
         padding-left: 30px;
     }
 
+}
+.outer-section{
+    width: 100%;
 }
