@@ -29,7 +29,8 @@
       <div class="search">
         <span><md-icon ng-class="{selected: filter.favorite}" aria-label="Favorite" class="material-icons icon_color ">search</md-icon>
         </span>
-        <span>
+        <span title="Search by product name, manufacturer, SKU, key...">
+          
           <input   ng-change="updateFilter('search')" class="search_bar" type="text" name="search" ng-model="filter.search" placeholder="Search by product name, manufacturer, SKU, key...">
         </span>
       </div>
