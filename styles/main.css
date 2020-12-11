@@ -73,10 +73,13 @@ height: 423px;
     text-align: center;
     border-radius: 5px;
 }
+.icon_color{
+    color:#4E6374;
+}
 .icon-spacing {
     
     margin-top: 7px;
-    color:#4E6374;
+   
 }
 .custom_btn {
     height: 40px;
@@ -102,20 +105,81 @@ height: 423px;
 }
 .company_title {
     height: 80px;
-    position: relative;
-    margin-left: 30px;
-    margin-top: 11px;
-    left: 122px;
-    top: 27px;
-    border-radius: 0px
+   
+    padding: 23px 23px 23px 142px;
+    border-radius: 0px;
+    border-bottom: 1px solid #CAD2D8;
 
     
 }
 .margin_left{
-margin-left:112px;
+    margin-left:112px;
 }
 .image_container {
     height: 233px;
             padding: 16px;
             border-bottom: 1px solid #CAD2D8;
+}
+.disp_inlline{
+    display: inline-block;
+}
+.search_area{
+    height: 56px;
+}
+.empty_section{
+    width: 10%;
+    border-right: 1px solid #CAD2D8;
+}
+.search{
+    height: 56px;
+    padding: 10px;
+    width: 64%;
+    border-right: 1px solid #CAD2D8;
+    border-left: 1px solid #CAD2D8;
+
+}
+.padding_10{
+    padding: 10px;
+}
+.favorite_filter{
+    height: 56px;
+    width: 10%;
+    border-right: 1px solid #CAD2D8;
+}
+.search_bar{
+    width: 100%;
+    border: none;
+    height: 35px;
+}
+#lblCartCount {
+    font-size: 12px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px;
+}
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+  background-color: #c67605;
+}
+.cart{
+    height: 56px;
+    border-right: 1px solid #CAD2D8;
+    cursor: pointer;
+    width: 10%;
+
+
+}
+.selected{
+ color: blue;
+  
 }

@@ -21,6 +21,13 @@
     <img src="assets/sowingo_logo.png"  height= "26.150537490844727px"
     width = "152px">
   </div>
+  <div class="search_area">
+    <div class="empty_section disp_inlline"></div>
+    <div class="search disp_inlline"><input class="search_bar" type="text" name="search" ng-model="filter.search" placeholder="Search by product name, manufacturer, SKU, key..."></div>
+    <div ng-class="{selected: filter.favorite}" class="favorite_filter disp_inlline padding_10" ng-click="onFilterApply('favorite')"><md-icon ng-class="{selected: filter.favorite}" aria-label="Favorite" class="material-icons icon_color ">favorite_border</md-icon> Favorites</div> 
+    <div ng-class="{selected: filter.cartItems}" class="cart disp_inlline padding_10"  ng-click="onFilterApply('cart')"><md-icon ng-class="{selected: filter.cartItems}" aria-label="Favorite" class="material-icons icon_color ">shopping_cart</md-icon><span class='badge badge-warning' id='lblCartCount'> {{cartItems.length}} </span> Cart</div>
+
+  </div>
   
   <div class="back_color padding_30">
     <div class="heading_font">Promos</div>
@@ -37,27 +44,18 @@
           <span class="your_price">Your Price </span> <span class="price_value">${{product.vendor_inventory[0].list_price}}</span>
         </div>
         <div class="txt_right actions">
-          <div class="favorite_border">
-            <md-icon aria-label="Favorite" class="material-icons icon-spacing" ng-show="product.is_favourite_product">favorite</md-icon>
-            <md-icon aria-label="Favorite" class="material-icons icon-spacing" ng-show="!product.is_favourite_product">favorite_border</md-icon>
+          <div class="favorite_border" ng-click="markAsFavorite(product)">
+            <md-icon aria-label="Favorite" class="material-icons icon_color icon-spacing" ng-show="product.is_favourite_product">favorite</md-icon>
+            <md-icon aria-label="Favorite" class="material-icons icon_color icon-spacing" ng-show="!product.is_favourite_product">favorite_border</md-icon>
           </div>
           
-          <button type="button" class="btn custom_btn btn-primary">Add to cart</button>
+          <button ng-show="!product.isInCart" type="button" ng-click="addItems(product)" class="btn custom_btn btn-primary">Add to cart</button>
+          <button ng-show="product.isInCart" type="button" ng-click="removeItem(product)" class="btn custom_btn btn-primary">Remove from cart</button>
         </div>
       </div>
     </div>
   </div>
-  <!-- <ul class="list-group text-center">
-    <li class="col-xs-6 col-md-3 col-sm-3 col-lg-3 list-group-item" ng-repeat="product in productsData">
-      <figure>
-        <figcaption>
-            {{product.name}}  
-                            <h3>{{product.price | currency}}</h3>
-        </figcaption>
-      </figure>
-      <input class="btn btn-success" type="button" ng-click="addItemToCart(product)" value="BUY" />
-    </li>
-  </ul> -->
+  
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
   <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.5/angular-material.js"></script>
