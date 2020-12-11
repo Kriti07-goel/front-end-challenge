@@ -1,0 +1,121 @@
+.each-item {
+            
+        width: 267px;
+height: 423px;
+        border-radius: 12px;
+
+            background: #FFFFFF;
+        /* Sow-Grey/400 */
+
+        border: 1px solid #CAD2D8;
+        box-sizing: border-box;
+        border-radius: 12px;
+        margin: 10px;
+}
+.padding_30 {
+    padding: 30px;
+}
+.item-image {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.prod-name {
+    height: 68px;
+    padding: 10px;
+   
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #4E6374;
+    margin:10px;
+
+
+}
+.margin_right_10 {
+    margin-right: 10px;
+}
+.txt_right{
+    text-align: right;
+}
+.your_price {
+   
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: right;
+
+}
+.price_value {
+   
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: right;
+    margin-left:10px;
+
+}
+.actions{
+    margin: 10px;
+}
+.favorite_border {
+    border: 2px solid #4E6374;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 5px;
+}
+.icon-spacing {
+    
+    margin-top: 7px;
+    color:#4E6374;
+}
+.custom_btn {
+    height: 40px;
+    font-size: 13px;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.back_color{
+    background: #F2F2F2;
+}
+.heading_font{
+    position: relative;
+    height: 30px;
+    width: 85px;
+    left: 122px;
+    top: -5px;
+    font-size:24px;
+    color:  #4E6374;
+    font-weight: 700;
+    margin-bottom: 14px;
+
+}
+.company_title {
+    height: 80px;
+    position: relative;
+    margin-left: 30px;
+    margin-top: 11px;
+    left: 122px;
+    top: 27px;
+    border-radius: 0px
+
+    
+}
+.margin_left{
+margin-left:112px;
+}
+.image_container {
+    height: 233px;
+            padding: 16px;
+            border-bottom: 1px solid #CAD2D8;
+}
