@@ -16,12 +16,19 @@ angular.module('test')
             $scope.allProductData = angular.copy($scope.productsData);
            
         });
-        $scope.onFilterApply = function(type) {
+        $scope.updateFilter = function(type) {
+            
             if(type === 'cart') {
                 this.filter.cartItems = !this.filter.cartItems;
+                this.filter.favorite = false;
             }else if(type === 'favorite') {
                 this.filter.favorite = !this.filter.favorite;
+                this.filter.cartItems = false;
             }
+            this.onFilterApply();
+        }
+        $scope.onFilterApply = function(type) {
+           
             $scope.productsData = angular.copy($scope.allProductData);
             if($scope.filter.favorite) {
                 $scope.productsData = $scope.productsData.filter(p => p.is_favourite_product);
@@ -66,6 +73,7 @@ angular.module('test')
             } else if( value === 'favorite') {
                 a.is_favourite_product = !a.is_favourite_product;
             }
+            this.onFilterApply();
         }
         $scope.removeItem = function(item) {
             const r = this.cartItems.find(c => c.id === item.id);
@@ -79,6 +87,13 @@ angular.module('test')
             item.is_favourite_product = !item.is_favourite_product;
             this.updatellItem(item, 'favorite');
         }
-       
+        window.addEventListener('scroll',(e)=>{
+            const nav = document.querySelector('.search_area');
+            if(window.pageYOffset>0){
+              nav.classList.add("add-shadow");
+            }else{
+              nav.classList.remove("add-shadow");
+            }
+          });
        
     });
