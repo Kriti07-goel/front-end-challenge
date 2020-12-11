@@ -3,7 +3,7 @@
 }
 .each-item {
   width: 267px;
-  height: 423px;
+  height: 430px;
   background: #FFFFFF;
   /* Sow-Grey/400 */
   border: 1px solid #CAD2D8;
@@ -21,7 +21,7 @@
 }
 .prod-name {
   height: 68px;
-  padding: 10px;
+  padding: 6px;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -36,6 +36,9 @@
 }
 .txt_right {
   text-align: right;
+}
+.margin-bottom_8 {
+  margin-bottom: 8px;
 }
 .your_price {
   font-size: 14px;
@@ -52,10 +55,11 @@
   line-height: 30px;
   letter-spacing: 0em;
   text-align: right;
-  margin-left: 10px;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 .actions {
-  margin: 10px;
+  padding: 16px;
 }
 .favorite_border {
   border: 2px solid #4E6374;
