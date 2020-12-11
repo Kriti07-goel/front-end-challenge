@@ -1,3 +1,10 @@
+<!-- Content can be cloned toy your local repo using git clone https://github.com/Kriti07-goel/front-end-challenge -->
+
+<!-- Once cloned you can install http-server, npm install http-server and run it http-server -o -->
+
+<!-- I have added both the files in html less and css, if running directly it will be fine but if running using http server we can comment css n use less. -->
+
+
 <!-- API called to fetch the list of items to be shown on screen  -->
 
 <!-- Cart count is shown when count is greater than 0. -->
